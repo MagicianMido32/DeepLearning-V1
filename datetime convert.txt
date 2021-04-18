@@ -1,0 +1,11 @@
+df['occurtime'] = pd.to_datetime(df['occurtime'],format="%Y-%m-%d_%H:%M:%S")
+
+
+
+MyDF.to_csv('MyWaterPump.csv',index=False,date_format="%Y-%m-%d_%H:%M:%S")
+
+
+
+def parser(x):
+	return datetime.strptime("%Y-%m-%d_%H:%M:%S")
+series = read_csv('shampoo-sales.csv', header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
